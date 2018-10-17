@@ -4,8 +4,10 @@
   "private": true,
   "homepage": "https://angiemonroe.github.io/cdmx-2018-06-bc-core-am-burger-queen",
   "dependencies": {
+    "mdbreact": "^4.8.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-firebase": "^2.2.8",
     "react-scripts": "2.0.5"
   },
   "scripts": {
