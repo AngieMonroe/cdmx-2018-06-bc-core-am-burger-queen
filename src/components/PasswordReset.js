@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Logo from '../images/Logo.png'
 import { Container, Row, Col, Input, Button } from 'mdbreact';
-import firebaseConf from '../firebaseConf/FirebaseConf'
+import * as firebase from 'firebase'
+import { withRouter } from 'react-router-dom';
+
 
 class PasswordReset extends Component {
   constructor(props){
@@ -17,15 +19,16 @@ class PasswordReset extends Component {
         })
       }
 
-    resetPassword(){
-      console.log(this.state)
-        firebaseConf.sendPasswordResetEmail(this.state.email).then(function() {
-            // Email sent.
+    resetPassword(e){
+      e.preventDefault();
+      const { email } = this.state;
+        firebase.auth().sendPasswordResetEmail(email).then(function() {
+          alert('Te enviamos un correo')
           }).catch(function(error) {
-            // An error happened.
+          console.log(error)
           });
+          this.props.history.push('/login');
     }
-
 
     render(){
         return (
@@ -36,10 +39,10 @@ class PasswordReset extends Component {
             <form>
               <p className="h5 text-center mb-4">Restaura tu contraseña</p>
               <div className="grey-text">
-                <Input label="Escribe tu email" icon="envelope" group type="email" name="email" validate error="wrong" success="right" onChange={this.handleChange}/>
+                <Input label="Escribe tu email" icon="envelope" group type="email" name="email" validate error="wrong" success="right" onChange={this.handleChange.bind(this)}/>
               </div>
               <div className="text-center mb-3">
-                <Button color="warning" className="mb-3" size="lg" onClick={this.resetPassword} >Enviar correo</Button>
+                <Button color="warning" className="mb-3" size="lg" onClick={this.resetPassword.bind(this)} >Enviar correo</Button>
               </div>
             </form>
           </Col>
@@ -49,4 +52,4 @@ class PasswordReset extends Component {
     }
 }
 
-export default PasswordReset;
+export default withRouter(PasswordReset);

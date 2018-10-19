@@ -3,6 +3,7 @@ import Logo from '../images/Logo.png'
 import { Navbar, NavbarBrand, NavbarNav,  NavItem, Button } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 import firebase from 'firebase';
+import { withRouter } from 'react-router-dom';
 
 
 class NavbarApp extends Component {
@@ -15,6 +16,7 @@ class NavbarApp extends Component {
         .catch(function(){
             console.log('error al cerrar sesión')
         })
+        this.props.history.push('/login')
     }
 
     render() {
@@ -26,7 +28,7 @@ class NavbarApp extends Component {
                     </NavbarBrand>
                         <NavbarNav right>
                           <NavItem>
-                            <Button color="red darken-4 rounded" onClick={this.logout}>Cerrar caja</Button>
+                            <Button color="red darken-4" className="rounded" onClick={this.logout.bind(this)}>Cerrar caja</Button>
                           </NavItem>
                         </NavbarNav>
                 </Navbar>
@@ -35,4 +37,4 @@ class NavbarApp extends Component {
     }
 }
 
-export default NavbarApp;
+export default withRouter(NavbarApp);
