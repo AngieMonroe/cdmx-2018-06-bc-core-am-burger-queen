@@ -4,8 +4,6 @@ import { withRouter } from 'react-router-dom';
 import firebaseConf from './firebaseConf/FirebaseConf';
 
 
-
-
 class App extends Component {
   constructor(props){
     super(props);

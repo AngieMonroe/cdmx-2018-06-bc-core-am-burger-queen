@@ -33,6 +33,10 @@ class Login extends Component  {
     })
   }
 
+  resetPassword(){
+    this.props.history.push('/recover')
+  }
+
   render() {
     return(
       <Container>
@@ -50,7 +54,7 @@ class Login extends Component  {
               </div>
             </form>
             <ModalFooter className="mx-5 pt-3 mt-4">
-              <Button color="lime" size="lg" className="mt-5 rounded" to={'/recover'}>Restaurar Contraseña </Button>
+              <Button color="lime" size="lg" className="mt-5 rounded" onClick={this.resetPassword.bind(this)}>Restaurar Contraseña </Button>
             </ModalFooter>
           </Col>
         </Row>

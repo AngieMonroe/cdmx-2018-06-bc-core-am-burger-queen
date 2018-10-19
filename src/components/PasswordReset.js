@@ -22,11 +22,12 @@ class PasswordReset extends Component {
     resetPassword(e){
       e.preventDefault();
       const { email } = this.state;
-        firebase.sendPasswordResetEmail(email).then(function() {
+        firebase.auth().sendPasswordResetEmail(email).then(function() {
+          alert('Te enviamos un correo')
           }).catch(function(error) {
           console.log(error)
           });
-          this.props.history.push('/orders');
+          this.props.history.push('/login');
     }
 
     render(){
