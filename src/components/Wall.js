@@ -3,7 +3,7 @@ import NavbarApp from './NavbarApp';
 import { Button } from 'mdbreact';
 import Orders from './Orders'
 import { Link, withRouter } from 'react-router-dom';
-
+import BreakfastMenu from './BreakfastMenu';
 
 
 
@@ -17,6 +17,7 @@ class Wall extends Component {
             <Button className="mr-4 rounded" size="lg" color="lime darken-4"> <Link to={'/recover'}>Desayunos </Link></Button>
             <Button className="rounded" size="lg" color="orange darken-4">Comida y Cenas</Button>
             <section>
+            <BreakfastMenu />
             </section>
             </section>
             <Orders />
