@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import { withRouter } from 'react-router-dom';
 import firebaseConf from './firebaseConf/FirebaseConf';
-import Login from '../src/components/Login';
-import Wall from '../src/components/Wall';
+
 
 
 
@@ -22,8 +22,10 @@ class App extends Component {
     firebaseConf.auth().onAuthStateChanged((user)=>{
       if(user){
         this.setState({ user });
+        this.props.history.push('/orders')
       } else{
         this.setState({ user: null });
+        this.props.history.replace('/login')
       }
     })
   }
@@ -31,9 +33,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      {this.state.user ? (<Wall user={this.state.user} />) : (<Login />)}
+      
       </div>
     )}
 }
 
-export default App;
+export default withRouter(App);

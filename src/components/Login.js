@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Logo from '../images/Logo.png'
 import { Container, Row, Col, Input, Button, ModalFooter } from 'mdbreact';
-import { BrowserRouter } from 'react-router-dom';
-import PasswordReset from './PasswordReset';
+import { withRouter } from 'react-router-dom';
 import firebase from 'firebase';
 
 class Login extends Component  {
@@ -15,11 +14,14 @@ class Login extends Component  {
       password: ''
     }
   }
+  
 
   signIn(e) {
-    const { email, password } = this.state;
     e.preventDefault();
-    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+    const { email, password } = this.state;
+    firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(result => this.props.history.push('/orders'))
+    .catch(function(error) {
       console.log(error);
     });
   }
@@ -33,7 +35,6 @@ class Login extends Component  {
 
   render() {
     return(
-      <BrowserRouter>
       <Container>
         <Row className= "row justify-content-md-center">
           <Col md="10">
@@ -45,18 +46,17 @@ class Login extends Component  {
                 <Input className="mb-5" label="Escribe tu password" icon="lock" group type="password" validate name="password" onChange={this.handleChange}/>
               </div>
               <div className="text-center mb-3">
-                <Button color="warning" className="mb-5 rounded" size="lg" onClick={this.signIn} >Entrar</Button>
+                <Button color="warning" className="mb-5 rounded" size="lg" onClick={this.signIn.bind(this)} >Entrar</Button>
               </div>
             </form>
             <ModalFooter className="mx-5 pt-3 mt-4">
-              <Button color="lime" size="lg" className="mt-5 rounded">Restaurar Contraseña</Button>
+              <Button color="lime" size="lg" className="mt-5 rounded" to={'/recover'}>Restaurar Contraseña </Button>
             </ModalFooter>
           </Col>
         </Row>
       </Container>
-    </BrowserRouter>
     );
   }
 };
 
-export default Login;
+export default withRouter(Login);
