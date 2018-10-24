@@ -1,0 +1,73 @@
+{
+  "breakfast" : [ {
+    "icon" : "coffee",
+    "nombre" : "Café americano",
+    "precio" : 5
+  }, {
+    "icon" : "coffee",
+    "nombre" : "Café con Leche",
+    "precio" : 7
+  }, {
+    "icon" : "cutlery",
+    "nombre" : "Sanchiwch",
+    "precio" : 10
+  }, {
+    "icon" : "leaf",
+    "nombre" : "Jugo Natural",
+    "precio" : 7
+  } ],
+  "dinner" : [ {
+    "icon" : "bars",
+    "nombre" : "Hamburguesa S",
+    "precio" : 10
+  }, {
+    "icon" : "bars",
+    "nombre" : "Hamburguesa D",
+    "precio" : 15
+  }, {
+    "icon" : "cog",
+    "nombre" : "Papas Fritas",
+    "precio" : 5
+  }, {
+    "icon" : "circle-o",
+    "nombre" : "Onion Rigs",
+    "precio" : 5
+  }, {
+    "icon" : "minus-square-o",
+    "nombre" : "Agua CH",
+    "precio" : 5
+  }, {
+    "icon" : "plus-square-o",
+    "nombre" : "Agua G",
+    "precio" : 7
+  }, {
+    "icon" : "minus-square",
+    "nombre" : "Refresco CH",
+    "precio" : 7
+  }, {
+    "icon" : "plus-square",
+    "nombre" : "Refresco G",
+    "precio" : 10
+  } ],
+  "extra" : [ {
+    "icon" : "ship",
+    "nombre" : "Res",
+    "precio" : 0
+  }, {
+    "icon" : "twitter",
+    "nombre" : "Pollo",
+    "precio" : 0
+  }, {
+    "icon" : "leaf",
+    "nombre" : "Vegetariana",
+    "precio" : 0
+  }, {
+    "icon" : "sticky-note",
+    "nombre" : "Queso",
+    "precio" : 1
+  }, {
+    "icon" : "shopping-basket",
+    "nombre" : "Huevo",
+    "precio" : 1
+  } ]
+}

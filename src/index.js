@@ -12,7 +12,6 @@ import 'mdbreact/dist/css/mdb.css';
 
 
 import * as serviceWorker from './serviceWorker';
-import BreakfastMenu from './components/BreakfastMenu';
 
 ReactDOM.render(
     <BrowserRouter basename = { process.env.PUBLIC_URL } >
@@ -21,7 +20,6 @@ ReactDOM.render(
               <Route path = '/login' component = { Login } />
               <Route path = '/recover' component = { PasswordReset } />
               <Route path = '/orders' component = { Wall } />
-              <Route path = '/breakfast' component = { BreakfastMenu } />
         </div>
       </BrowserRouter>, document.getElementById('root'));
 
