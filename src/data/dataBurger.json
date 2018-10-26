@@ -1,0 +1,90 @@
+{
+  "breakfast" : [ {
+    "icon" : "coffee",
+    "id" : 1,
+    "nombre" : "Café americano",
+    "precio" : 5
+  }, {
+    "icon" : "coffee",
+    "id" : 2,
+    "nombre" : "Café con Leche",
+    "precio" : 7
+  }, {
+    "icon" : "cutlery",
+    "id" : 3,
+    "nombre" : "Sanchiwch",
+    "precio" : 10
+  }, {
+    "icon" : "leaf",
+    "id" : 4,
+    "nombre" : "Jugo Natural",
+    "precio" : 7
+  } ],
+  "dinner" : [ {
+    "icon" : "bars",
+    "id" : 5,
+    "nombre" : "Hamburguesa S",
+    "precio" : 10
+  }, {
+    "icon" : "bars",
+    "id" : 6,
+    "nombre" : "Hamburguesa D",
+    "precio" : 15
+  }, {
+    "icon" : "cog",
+    "id" : 7,
+    "nombre" : "Papas Fritas",
+    "precio" : 5
+  }, {
+    "icon" : "circle-o",
+    "id" : 8,
+    "nombre" : "Onion Rigs",
+    "precio" : 5
+  }, {
+    "icon" : "minus-square-o",
+    "id" : 9,
+    "nombre" : "Agua CH",
+    "precio" : 5
+  }, {
+    "icon" : "plus-square-o",
+    "id" : 10,
+    "nombre" : "Agua G",
+    "precio" : 7
+  }, {
+    "icon" : "minus-square",
+    "id" : 11,
+    "nombre" : "Refresco CH",
+    "precio" : 7
+  }, {
+    "icon" : "plus-square",
+    "id" : 12,
+    "nombre" : "Refresco G",
+    "precio" : 10
+  } ],
+  "extra" : [ {
+    "icon" : "ship",
+    "id" : 13,
+    "nombre" : "Res",
+    "precio" : 0
+  }, {
+    "icon" : "twitter",
+    "id" : 14,
+    "nombre" : "Pollo",
+    "precio" : 0
+  }, {
+    "icon" : "leaf",
+    "id" : 15,
+    "nombre" : "Vegetariana",
+    "precio" : 0
+  }, {
+    "icon" : "sticky-note",
+    "id" : 16,
+    "nombre" : "Queso",
+    "precio" : 1
+  }, {
+    "icon" : "shopping-basket",
+    "id" : 17,
+    "nombre" : "Huevo",
+    "precio" : 1
+  } ]
+}
