@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Table, TableBody, Button, Fa  } from 'mdbreact';
 import store from '../store';
 import firebase from 'firebase';
+import { withRouter } from 'react-router-dom';
 
 const firestore = firebase.firestore();
 
@@ -11,8 +12,7 @@ class Orders extends Component {
     constructor(props){
         super(props);
         this.state = {
-            order: [],
-            total: null
+            order: []
         }
         store.subscribe(() => {
             this.setState({
@@ -39,6 +39,7 @@ class Orders extends Component {
         })
         .then(function() {
             console.log("Document successfully written!");
+
         })
     }
    
@@ -81,4 +82,4 @@ class Orders extends Component {
   }
 }
 
-export default Orders;
+export default withRouter(Orders);

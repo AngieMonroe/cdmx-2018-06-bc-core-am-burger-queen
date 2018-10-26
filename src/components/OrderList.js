@@ -50,15 +50,18 @@ class OrderList extends Component {
                 <tr key={i}>
                     <td>{element.name}</td>
                     <td>{product}</td>
-                    <td>{element.status}</td>
+                    <td>{element.status}<label class="bs-switch">
+                        <input  size="sm" type="checkbox"/>
+                        <span class="slider round"></span>
+                        </label>
+                        Entregado</td>
                 </tr>
             ) 
-        
-        })
+        }).reverse()
         return (
             <section>
                 <NavbarApp />
-            <article className="container">
+            <article className="container mt-5">
                 <table className="table container">
                 <thead className="grey lighten-2">
                     <tr>
