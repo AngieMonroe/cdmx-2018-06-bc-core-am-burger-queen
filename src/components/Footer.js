@@ -2,7 +2,7 @@ import React, { Component} from "react";
 import { Col, Container, Row, Footer, Button, Fa } from "mdbreact";
 import { withRouter } from 'react-router-dom';
 
-
+// Componente footer
 class FooterApp extends Component {
     
     orderList(){

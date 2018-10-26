@@ -2,17 +2,19 @@ import React, { Component } from 'react';
 import { Table, TableBody, Button, Fa  } from 'mdbreact';
 import store from '../store';
 import firebase from 'firebase';
+import { withRouter } from 'react-router-dom';
 
 const firestore = firebase.firestore();
 
 
-
+// Este componente es el encargado de mostrar el listado de los productos que se han solicitado y
+// se realiza la suma, se pueden eliminar productos. Se utiliza redux para tener un estado global
+// que se utiliza en conjunto con el componente Wall.
 class Orders extends Component {
     constructor(props){
         super(props);
         this.state = {
-            order: [],
-            total: null
+            order: []
         }
         store.subscribe(() => {
             this.setState({
@@ -39,6 +41,7 @@ class Orders extends Component {
         })
         .then(function() {
             console.log("Document successfully written!");
+
         })
     }
    
@@ -81,4 +84,4 @@ class Orders extends Component {
   }
 }
 
-export default Orders;
+export default withRouter(Orders);

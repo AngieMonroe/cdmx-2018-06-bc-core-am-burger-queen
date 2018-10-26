@@ -4,7 +4,7 @@ import { Container, Row, Col, Input, Button } from 'mdbreact';
 import * as firebase from 'firebase'
 import { withRouter } from 'react-router-dom';
 
-
+// Componente para restaurar contraseña se utilizan las funciones de firebase para este fin
 class PasswordReset extends Component {
   constructor(props){
     super(props);

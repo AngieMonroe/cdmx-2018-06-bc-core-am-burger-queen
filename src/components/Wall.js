@@ -8,6 +8,9 @@ import store from '../store';
 import firebase from 'firebase';
 import FooterApp from './Footer';
 
+// En este componente realizamos el render de los productos de acuerdo a las opciones
+// desayuno y comida, cada boton a su vez tiene la función de actualizar el estado de redux
+// para tener un estado global que compartira con Orders.
 class Wall extends Component {
     constructor(props){
         super(props);
@@ -52,6 +55,8 @@ class Wall extends Component {
         this.setState({dinner: false, extra: true})
     }
 
+    // El render de la información se realiza por medio de map y a su vez se guarda esta función en una variable.
+    // Esto se realiza con base en la documentación de react.
     render() {
         let menu;
         let button;
