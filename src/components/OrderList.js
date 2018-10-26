@@ -5,7 +5,8 @@ import NavbarApp from './NavbarApp';
 
 const firestore = firebase.firestore();
 
-
+// Con la información de firebase se pinta un listado de los productos seleccionados. Falta trabajar persistencia
+// de la información con ayuda de firebase.
 class OrderList extends Component {
     constructor(props){
         super(props);

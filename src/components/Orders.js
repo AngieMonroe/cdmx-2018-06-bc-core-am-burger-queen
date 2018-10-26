@@ -7,7 +7,9 @@ import { withRouter } from 'react-router-dom';
 const firestore = firebase.firestore();
 
 
-
+// Este componente es el encargado de mostrar el listado de los productos que se han solicitado y
+// se realiza la suma, se pueden eliminar productos. Se utiliza redux para tener un estado global
+// que se utiliza en conjunto con el componente Wall.
 class Orders extends Component {
     constructor(props){
         super(props);

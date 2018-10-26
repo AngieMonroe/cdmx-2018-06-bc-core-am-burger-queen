@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import firebase from 'firebase';
 import { withRouter } from 'react-router-dom';
 
-
+// Componente navbar
 class NavbarApp extends Component {
 
     logout(){

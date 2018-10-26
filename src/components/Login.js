@@ -4,6 +4,8 @@ import { Container, Row, Col, Input, Button, ModalFooter } from 'mdbreact';
 import { withRouter } from 'react-router-dom';
 import firebase from 'firebase';
 
+//Componente Login. El usuario inicia sesión la autenticación se realiza mediante firebase
+
 class Login extends Component  {
   constructor(props){
     super(props);
@@ -33,6 +35,7 @@ class Login extends Component  {
     })
   }
 
+  // Con este metodo enviamos a la pagina para recuperar contraseña por medio de rutas
   resetPassword(){
     this.props.history.push('/recover')
   }
