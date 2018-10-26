@@ -5,6 +5,7 @@ import App from './App';
 import PasswordReset from './components/PasswordReset';
 import Login from './components/Login';
 import Wall from './components/Wall';
+import OrderList from './components/OrderList';
 import { BrowserRouter, Route } from 'react-router-dom';
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css'; 
@@ -20,6 +21,7 @@ ReactDOM.render(
               <Route path = '/login' component = { Login } />
               <Route path = '/recover' component = { PasswordReset } />
               <Route path = '/orders' component = { Wall } />
+              <Route path = '/report' component = {OrderList} />
         </div>
       </BrowserRouter>, document.getElementById('root'));
 
