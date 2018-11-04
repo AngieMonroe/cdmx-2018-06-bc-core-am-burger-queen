@@ -3,7 +3,7 @@ import firebase from 'firebase';
 import { withRouter } from 'react-router-dom';
 import NavbarApp from './NavbarApp';
 
-const firestore = firebase.firestore();
+let firestore = firebase.firestore();
 
 // Con la información de firebase se pinta un listado de los productos seleccionados. Falta trabajar persistencia
 // de la información con ayuda de firebase.
@@ -15,46 +15,54 @@ class OrderList extends Component {
         })
     }
     
-
     componentDidMount(){
         const orders = []
         firestore.collection('orders').onSnapshot((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 const {status, order, name} = doc.data();
-                console.log(status, order)
-                let dataOrder = {status, order, name}
+                // console.log(status, order)
+                let dataOrder = {status, order, name, id: doc.id}
                 orders.push(dataOrder);
-                // statusKitchen = status;
-                // order.forEach((element) => {
-                //     const dataOrder = element
-                //     orders.push({dataOrder})
-                // })
             })
-        //     const pedido = {statusKiondragover
-        //     let arraypedido = []
-        //     arraypedido.push(pedido)
-        console.log(orders)
         this.setState({orders})
         })
 
     }
 
+    status(id){
+        let ref = firestore.collection('orders').doc(id);
+        return ref.update({
+            status: "Entregada"
+  });
+
+    }
+
     render () {
-        
+        let status;
         let infoOrder = this.state.orders.map((element, i) => {
-            console.log(element.status)
-            let product = element.order.map((product) => {
-                return  product.nombre
+            // console.log(element)
+
+            if(element.status === "En cocina"){
+                status = <label key={i} className="bs-switch">
+                <input  size="sm" type="checkbox" onClick={()=>(this.status(element.id))}/>
+                <span className="slider round"></span>
+                </label>
+            } else {
+                status = <label key={i} className="bs-switch">
+                        <input  size="sm" type="checkbox" checked/>
+                        <span className="slider round"></span>
+                        </label>
+            }
+            let product = element.order.map((product, i) => {
+                // console.log(product.nombre)
+                return  <p key={i}>{product.nombre}</p>
             })
             return (
             
                 <tr key={i}>
-                    <td>{element.name}</td>
+                    <td className="align-middle">{element.name}</td>
                     <td>{product}</td>
-                    <td>{element.status}<label class="bs-switch">
-                        <input  size="sm" type="checkbox"/>
-                        <span class="slider round"></span>
-                        </label>
+                    <td className="align-middle">En cocina {status}
                         Entregado</td>
                 </tr>
             ) 
@@ -63,12 +71,12 @@ class OrderList extends Component {
             <section>
                 <NavbarApp />
             <article className="container mt-5">
-                <table className="table container">
-                <thead className="grey lighten-2">
+                <table className="table container text-center">
+                <thead className="grey lighten-2 ">
                     <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Pedido</th>
-                    <th scope="col">Status</th>
+                    <th scope="col"><strong>Nombre</strong></th>
+                    <th scope="col"><strong>Pedido</strong></th>
+                    <th scope="col"><strong>Status</strong></th>
                     </tr>
                 </thead>
                 <tbody>

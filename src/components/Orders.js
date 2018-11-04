@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { Table, TableBody, Button, Fa  } from 'mdbreact';
 import store from '../store';
-import firebase from 'firebase';
 import { withRouter } from 'react-router-dom';
-
-const firestore = firebase.firestore();
+import { firestore } from '../firebaseConf/FirebaseConf';
 
 
 // Este componente es el encargado de mostrar el listado de los productos que se han solicitado y
@@ -24,25 +22,26 @@ class Orders extends Component {
         });
     }
 
-    removeFromOrder(product){
+    removeFromOrder(product, i){
         store.dispatch({
             type: "REMOVE_FROM_ORDER",
-            product})
+            product,
+            i})
             
     }
 
     sendKitchen(){
         const {name} = this.props
-        console.log(name)
+        // console.log(name)
         firestore.collection("orders").add({
             order: this.state.order,
             status: "En cocina",
             name
         })
         .then(function() {
-            console.log("Document successfully written!");
-
+            // console.log("Document successfully written!");
         })
+        this.props.history.push('/')
     }
    
 
@@ -55,12 +54,12 @@ class Orders extends Component {
             <td className="text-center align-middle">{product.nombre}</td>
             <td className="text-center align-middle">{product.precio}</td>
             <td className="text-center align-middle">
-            <Button size="sm" color="red darken-4 rounded" onClick={() =>this.removeFromOrder(product)}><Fa icon="trash" size="1x"/><br/></Button></td>
+            <Button size="sm" color="red darken-4 rounded" onClick={() =>this.removeFromOrder(product, i)}><Fa icon="trash" size="1x"/><br/></Button></td>
             </tr>
         })
 
         this.state.order.forEach(product => {
-            console.log(product.precio)
+            // console.log(product.precio)
             total += product.precio
         })
 

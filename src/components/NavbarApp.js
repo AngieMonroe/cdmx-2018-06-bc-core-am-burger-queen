@@ -8,6 +8,10 @@ import { withRouter } from 'react-router-dom';
 // Componente navbar
 class NavbarApp extends Component {
 
+    order(){
+        this.props.history.push('/orders')
+    }
+
     logout(){
         firebase.auth().signOut()
         .then(function() {
@@ -23,7 +27,7 @@ class NavbarApp extends Component {
         return (
             <Router>
                 <Navbar color="lime" dark expand="md" scrolling>
-                    <NavbarBrand href="/">
+                    <NavbarBrand onClick={this.order.bind(this)}>
                     <img src={Logo} alt="logo" height="80"/>
                     </NavbarBrand>
                         <NavbarNav right>

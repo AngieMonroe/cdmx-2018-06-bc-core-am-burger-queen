@@ -107,7 +107,8 @@ class Wall extends Component {
     addToCart(product){
         store.dispatch({
             type: "ADD_TO_ORDER",
-            product})
+            product
+        })
     }
 }
 
