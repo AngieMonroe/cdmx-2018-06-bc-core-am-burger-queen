@@ -9,7 +9,7 @@ const reducer = (state, action) => {
     } else if(action.type === "REMOVE_FROM_ORDER"){
         return {
             ...state,
-            order: state.order.filter(product => product.id !== action.product.id)
+            order: state.order.filter((product, i) => i !== action.i)
         }
     }
 return state;

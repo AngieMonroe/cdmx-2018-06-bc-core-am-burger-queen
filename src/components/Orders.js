@@ -27,7 +27,6 @@ class Orders extends Component {
             type: "REMOVE_FROM_ORDER",
             product,
             i})
-            
     }
 
     sendKitchen(){

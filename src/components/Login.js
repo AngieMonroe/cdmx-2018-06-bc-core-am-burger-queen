@@ -25,6 +25,11 @@ class Login extends Component  {
     .then(result => this.props.history.push('/orders'))
     .catch(function(error) {
       console.log(error);
+      if(error.code === "auth/invalid-email"){
+        alert('Email no válido, revisa la información.')
+      } else if(error.code === "auth/wrong-password"){
+        alert('Password no válido, revisa la información.')
+      }
     });
   }
 
