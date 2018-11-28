@@ -6,4 +6,4 @@ Interfaz web que facilita tomar pedidos de manera rápida y eficiente desde una 
 
 # Desarrollado para
 
-[Laboratoria]http://www.laboratoria.la/
+![Laboratoria]http://www.laboratoria.la/
