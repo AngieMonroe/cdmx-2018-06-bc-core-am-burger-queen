@@ -3,6 +3,8 @@ import { Table, TableBody, Button, Fa  } from 'mdbreact';
 import store from '../store';
 import { withRouter } from 'react-router-dom';
 import { firestore } from '../firebaseConf/FirebaseConf';
+import './Orders.css';
+
 
 
 // Este componente es el encargado de mostrar el listado de los productos que se han solicitado y
@@ -66,7 +68,7 @@ class Orders extends Component {
     return (
       <section className="container">
         <div className="row mt-5 ">
-        <div className="col-7">
+        <div className="col-7 margin-bottom">
         <Table>
         <TableBody>
         {order}

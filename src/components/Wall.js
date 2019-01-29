@@ -97,7 +97,9 @@ class Wall extends Component {
             {menu}   
             </section>
             </section>
-            <Orders name ={this.state.client}/>
+            <div>
+                <Orders name ={this.state.client}/>
+            </div>
             <FooterApp />
             
             </div>
