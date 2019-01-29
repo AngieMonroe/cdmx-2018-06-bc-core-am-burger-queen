@@ -43,13 +43,6 @@ class Wall extends Component {
         this.setState ({breakfast: false, dinner: true})
     }
 
-    // onClick(e){
-    //     e.preventDefault();
-    //     const order = this.state.order
-    //     order.push({producto : e.target.name,
-    //                 precio : parseInt(e.target.value)})
-    //     this.setState({ order : order })
-    // }
 
     handleChangeExtra(){
         this.setState({dinner: false, extra: true})
@@ -97,7 +90,9 @@ class Wall extends Component {
             {menu}   
             </section>
             </section>
-            <Orders name ={this.state.client}/>
+            <div>
+                <Orders name ={this.state.client}/>
+            </div>
             <FooterApp />
             
             </div>
