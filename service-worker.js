@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/TalentFest-citibanamex/precache-manifest.1441c4f0aa2fb5afd7b636611b4c2443.js"
+  "/TalentFest-citibanamex/precache-manifest.05d66cbc00f090acca041f796bf8e4ab.js"
 );
 
 workbox.clientsClaim();
