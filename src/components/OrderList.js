@@ -14,13 +14,13 @@ class OrderList extends Component {
             orders: []
         })
     }
-    
-    componentDidMount(){
+
+    // Información de la base de datos
+    componentWillMount(){
         firestore.collection('orders').onSnapshot((querySnapshot) => {
             const orders = []
             querySnapshot.forEach((doc) => {
                 const {status, order, name} = doc.data();
-                // console.log(status, order)
                 let dataOrder = {status, order, name, id: doc.id}
                 orders.push(dataOrder);
             })
@@ -28,12 +28,16 @@ class OrderList extends Component {
         })
     }
 
+    //Actualización de estado del pedido
     status(id){
+        const response = window.confirm('Estas seguro de cambiar el status')
+        if(response){
         let ref = firestore.collection('orders').doc(id);
         return ref.update({
             status: "Entregada"
         });
     }
+}
 
     render () {
         let status;
@@ -50,7 +54,6 @@ class OrderList extends Component {
                         </label>
             }
             let product = element.order.map((product, i) => {
-                // console.log(product.nombre)
                 return  <p key={i}>{product.nombre}</p>
             })
             return (
@@ -62,7 +65,7 @@ class OrderList extends Component {
                         Entregado</td>
                 </tr>
             ) 
-        }).reverse()
+        })
         return (
             <section>
                 <NavbarApp />

@@ -33,7 +33,13 @@ class Orders extends Component {
 
     sendKitchen(){
         const {name} = this.props
-        // console.log(name)
+        if(!name){
+            alert('Ingresar nombre cliente')
+        } 
+        if (this.state.order.length === 0) {
+            alert('Ingresa producto')
+        }
+        else {
         firestore.collection("orders").add({
             order: this.state.order,
             status: "En cocina",
@@ -43,6 +49,7 @@ class Orders extends Component {
             // console.log("Document successfully written!");
         })
         this.props.history.push('/')
+    }
     }
    
 
