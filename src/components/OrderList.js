@@ -16,8 +16,8 @@ class OrderList extends Component {
     }
     
     componentDidMount(){
-        const orders = []
         firestore.collection('orders').onSnapshot((querySnapshot) => {
+            const orders = []
             querySnapshot.forEach((doc) => {
                 const {status, order, name} = doc.data();
                 // console.log(status, order)
@@ -26,22 +26,18 @@ class OrderList extends Component {
             })
         this.setState({orders})
         })
-
     }
 
     status(id){
         let ref = firestore.collection('orders').doc(id);
         return ref.update({
             status: "Entregada"
-  });
-
+        });
     }
 
     render () {
         let status;
         let infoOrder = this.state.orders.map((element, i) => {
-            // console.log(element)
-
             if(element.status === "En cocina"){
                 status = <label key={i} className="bs-switch">
                 <input  size="sm" type="checkbox" onClick={()=>(this.status(element.id))}/>

@@ -1,6 +1,7 @@
 import React, { Component} from "react";
 import { Col, Container, Row, Footer, Button, Fa } from "mdbreact";
 import { withRouter } from 'react-router-dom';
+import './Footer.css';
 
 // Componente footer
 class FooterApp extends Component {
@@ -11,7 +12,7 @@ class FooterApp extends Component {
       
     render() {
     return (
-    <Footer color="warning-color" className="font-small fixed-bottom" >
+    <Footer color="warning-color" className="font-small footer-bottom" >
     <Container fluid className="text-center text-md-right">
         <Row>
         <Col>

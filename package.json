@@ -2,7 +2,7 @@
   "name": "burger-queen",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://angiemonroe.github.io/cdmx-2018-06-bc-core-am-burger-queen",
+  "homepage": "https://angiemonroe.github.io/TalentFest-citibanamex",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.6",
     "@fortawesome/free-solid-svg-icons": "^5.4.1",
