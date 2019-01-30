@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/TalentFest-citibanamex/static/media/Roboto-Bold.ecdd509c.eot"
   },
   {
-    "revision": "d574376b912c6d5b9888",
+    "revision": "31cf753815e8182f023b",
     "url": "/TalentFest-citibanamex/static/css/main.05d5c9c3.chunk.css"
   },
   {
@@ -68,8 +68,8 @@ self.__precacheManifest = [
     "url": "/TalentFest-citibanamex/static/media/Roboto-Medium.4d9f3f9e.eot"
   },
   {
-    "revision": "d574376b912c6d5b9888",
-    "url": "/TalentFest-citibanamex/static/js/main.d574376b.chunk.js"
+    "revision": "31cf753815e8182f023b",
+    "url": "/TalentFest-citibanamex/static/js/main.31cf7538.chunk.js"
   },
   {
     "revision": "954bbdeb86483e4ffea00c4591530ece",
@@ -132,7 +132,7 @@ self.__precacheManifest = [
     "url": "/TalentFest-citibanamex/static/css/1.e163bb76.chunk.css"
   },
   {
-    "revision": "fe9968d9f134741785af4d388f8af783",
+    "revision": "8c47b9cf45eecf7793909dfd80f87b4a",
     "url": "/TalentFest-citibanamex/index.html"
   }
 ];
